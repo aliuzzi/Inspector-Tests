@@ -62,8 +62,8 @@ subtest("Unreadable hostname file. Return value should be nonzero.",
     char *hn_file = build_path(getenv("TEST_DIR"),
             "/inputs/dummyproc1/sys/kernel/hostname");
     int chmod_ret = chmod(hn_file, 0000);
-	test_assert(chmod_ret == 0, "If this fails the test dataset is broken");
-	free(hn_file);
+    test_assert(chmod_ret == 0, "If this fails the test dataset is broken");
+    free(hn_file);
 
     char hostname[HOST_NAME_MAX + 1] = { 88 };
     int return_value = pfs_hostname(dummyproc, hostname, HOST_NAME_MAX + 1);
