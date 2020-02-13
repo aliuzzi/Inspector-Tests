@@ -6,8 +6,8 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+#include "helpers.h"
 #include "procfs.h"
-#include "build_path.h"
 
 test_start(
         "Verifies that the pfs_hostname function retrieves the system "
@@ -56,15 +56,9 @@ subtest("Invalid proc location. Return value should be nonzero.",
 });
 
 
-subtest("Unreadable hostname file. Return value should be nonzero.",
+subtest("Unreadable file. Return value should be nonzero.",
 {
-    char *dummyproc = build_path(getenv("TEST_DIR"), "/inputs/dummyproc1");
-    char *hn_file = build_path(getenv("TEST_DIR"),
-            "/inputs/dummyproc1/sys/kernel/hostname");
-    int chmod_ret = chmod(hn_file, 0000);
-    test_assert(chmod_ret == 0, "If this fails the test dataset is broken");
-    free(hn_file);
-
+    char *dummyproc = unreadable("/sys/kernel/hostname");
     char hostname[HOST_NAME_MAX + 1] = { 88 };
     int return_value = pfs_hostname(dummyproc, hostname, HOST_NAME_MAX + 1);
 
