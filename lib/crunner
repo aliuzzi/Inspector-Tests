@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-LD_LIBRARY_PATH="${TEST_DIR}/../"
+export LD_LIBRARY_PATH="${TEST_DIR}/../"
+
 cc -g -Wall ${@} \
     -L"${TEST_DIR}/../" \
     -I"${TEST_DIR}/../" \
