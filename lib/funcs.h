@@ -31,7 +31,7 @@ int main(void) { test_setup(description);
             printf("> %s\n", description); \
         } \
         printf("> Assertion: %s [ %s ]\n", #cond, cond ? " OK " : "FAIL"); \
-        if (!cond) { subtest_assert_fail++; } \
+        if (!(cond)) { subtest_assert_fail++; } \
         test_flush(); \
     } while (0)
 

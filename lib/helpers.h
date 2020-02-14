@@ -1,5 +1,5 @@
-#ifndef _BUILD_PATH_H_
-#define _BUILD_PATH_H_
+#ifndef _HELPERS_H_
+#define _HELPERS_H_
 
 char *build_path(char *proc_dir, char *suffix)
 {
