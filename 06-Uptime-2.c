@@ -10,9 +10,7 @@
 #include "helpers.h"
 #include "procfs.h"
 
-test_start(
-        "Verifies that the pfs_kernel_version function retrieves the kernel "
-        "version with correct formatting.");
+test_start("Tests the pfs_uptime and pfs_format_uptime functions.");
 
 subtest("Retrieving the uptime in seconds from dummyproc1",
 {

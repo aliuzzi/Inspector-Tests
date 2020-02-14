@@ -10,9 +10,7 @@
 #include "helpers.h"
 #include "procfs.h"
 
-test_start(
-        "Verifies that the pfs_kernel_version function retrieves the kernel "
-        "version with correct formatting.");
+test_start("Tests the CPU units calculation.");
 
 subtest("Comparing output against host machine via _SC_NPROCESSORS_ONLN",
 {
