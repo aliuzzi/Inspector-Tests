@@ -1,7 +1,7 @@
 source "${TEST_DIR}/lib/funcs.bash"
 
 test_start "Static Analysis" \
-    "Checks for programming and stylistic errors with cppcheck"
+    "Checks for programming and stylistic errors with cppcheck and gcc"
 
 if ! ( which cppcheck &> /dev/null ); then
     # "cppcheck is not installed. Please install (as root) with:"
@@ -11,6 +11,8 @@ fi
 
 cppcheck --enable=warning,style,performance,portability \
     --error-exitcode=1 \
-    "${TEST_DIR}/../"{procfs.c,procfs.h,util.c,util.h}
+    "${TEST_DIR}/../"{procfs.c,procfs.h,util.c,util.h} || test_end 1
+
+gcc -Wall -Werror -lm -lncurses "${TEST_DIR}"/../*.c || test_end 1
 
 test_end

@@ -16,7 +16,8 @@
 test_start("Tests CPU usage calculation.");
 
 subtest("Predefined CPU usages, simulated by dynamically generating /proc/stat "
-       " contents for each call to open(2).",
+        " contents for each call to open(2). "
+        "See tests/inputs/virtualproc/stat for the sequence of file states.",
 {
     double expected_percentages[] = {
         0.302853,

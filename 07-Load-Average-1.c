@@ -16,7 +16,8 @@
 test_start("Tests the pfs_load_avg function.");
 
 subtest("Predefined load averages, simulated by dynamically generating "
-        "/proc/loadavg contents for each call to open(2).",
+        "/proc/loadavg contents for each call to open(2). "
+        "See tests/inputs/virtualproc/loadavg for the sequence of file states.",
 {
     struct load_avg expected_loads[] = {
             { 0.99, 0.99, 0.99 },
