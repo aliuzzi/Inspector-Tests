@@ -43,9 +43,9 @@ int main(void) { test_setup(description);
         if (strcmp(description, "") != 0) { \
             printf("> %s\n", description); \
         } \
-        bool cond = (!(fabs(float1 - float2) < threshold)); \
+        bool cond = (fabs(float1 - float2) < threshold); \
         printf("> Assertion: %s == %s (threshold: %f) [ %s ]\n", \
-            #float1, #float2, cond ? " OK " : "FAIL"); \
+            #float1, #float2, threshold, cond ? " OK " : "FAIL"); \
         if (!(cond)) { subtest_assert_fail++; } \
         test_flush(); \
     } while (0)
