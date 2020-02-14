@@ -13,6 +13,6 @@ cppcheck --enable=warning,style,performance,portability \
     --error-exitcode=1 \
     "${TEST_DIR}/../"{procfs.c,procfs.h,util.c,util.h} || test_end 1
 
-gcc -Wall -Werror -lm -lncurses "${TEST_DIR}"/../*.c || test_end 1
+gcc -Wall -Werror -lm -lncurses "${TEST_DIR}"/../*.c -o /dev/null || test_end 1
 
 test_end
