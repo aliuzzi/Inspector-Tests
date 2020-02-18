@@ -46,10 +46,10 @@ subtest("Retrieving the formatted uptime from dummyproc1",
 subtest("Invalid proc location. Return value should be nonzero.",
 {
     char invalid[] = "/this/does/not/exist";
-    int units = pfs_cpu_units(invalid);
+    double time = pfs_uptime(invalid);
 
-    test_assert(units == 0);
-    test_printf("%d", units);
+    test_assert(time == 0.0);
+    test_printf("%f", time);
 });
 
 test_end
