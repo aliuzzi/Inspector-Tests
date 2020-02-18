@@ -48,7 +48,7 @@ subtest("Invalid proc location. Return value should be nonzero.",
     char invalid[] = "/this/does/not/exist";
     double time = pfs_uptime(invalid);
 
-    test_assert(time == 0.0);
+    test_assert(time == 0.0 || test == -1.0);
     test_printf("%f", time);
 });
 
