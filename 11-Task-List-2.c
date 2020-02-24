@@ -36,9 +36,6 @@ subtest("Comparing against fake procfs test set",
 
     struct task_stats *tstats = pfs_create_tstats();
     test_assert(tstats != NULL);
-    if (tstats == NULL) {
-        break;
-    }
 
     pfs_tasks(fakeproc, tstats);
 
