@@ -33,12 +33,12 @@ subtest("Comparing against fake procfs test set",
 });
 
 
-subtest("Invalid proc location. Return value should be nonzero.",
+subtest("Invalid proc location. Return value should be -1.",
 {
     char invalid[] = "/this/does/not/exist";
     int units = pfs_cpu_units(invalid);
 
-    test_assert(units == 0);
+    test_assert(units == -1);
     test_printf("%d", units);
 });
 
