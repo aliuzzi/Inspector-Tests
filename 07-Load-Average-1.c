@@ -38,12 +38,12 @@ subtest("Predefined load averages, simulated by dynamically generating "
         test_printf("%.2f", expected_load.one);
 
         test_assert(load.five == expected_load.five);
-        test_printf("%.2f", load.one);
-        test_printf("%.2f", expected_load.one);
+        test_printf("%.2f", load.five);
+        test_printf("%.2f", expected_load.five);
 
         test_assert(load.fifteen == expected_load.fifteen);
-        test_printf("%.2f", load.one);
-        test_printf("%.2f", expected_load.one);
+        test_printf("%.2f", load.fifteen);
+        test_printf("%.2f", expected_load.fifteen);
     }
 
 });
